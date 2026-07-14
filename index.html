@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIG6 | Next-Gen Websites & Digital Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+        
+        :root {
+            --primary: 34 211 238;
+        }
+        
+        .tail-container {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .logo-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+        }
+
+        .nav-link {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .nav-link:hover {
+            color: rgb(34 211 238);
+            transform: translateY(-2px);
+        }
+
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+        }
+
+        .section-header {
+            position: relative;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: rgb(34 211 238);
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+    </style>
+</head>
+<body class="tail-container bg-zinc-950 text-zinc-200 overflow-x-hidden">
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-lg border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-cyan-500 rounded-2xl flex items-center justify-center text-zinc-950 font-bold text-2xl logo-font">6</div>
+                <div>
+                    <span class="text-3xl font-semibold tracking-tighter logo-font">BIG</span>
+                    <span class="text-3xl font-semibold tracking-tighter logo-font text-cyan-400">6</span>
+                </div>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#industries" class="nav-link">Industries</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="#contact" 
+                   class="hidden md:block px-6 py-3 text-sm font-semibold border border-cyan-500 hover:bg-cyan-500 hover:text-zinc-950 transition-colors rounded-2xl">
+                    Get a Quote
+                </a>
+                <button id="mobile-menu-btn"
+                        class="md:hidden w-11 h-11 flex items-center justify-center text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-zinc-950 z-50 pt-20 px-6">
+            <div class="flex flex-col gap-6 text-lg font-medium">
+                <a href="#home" onclick="toggleMobileMenu()" class="nav-link">Home</a>
+                <a href="#services" onclick="toggleMobileMenu()" class="nav-link">Services</a>
+                <a href="#portfolio" onclick="toggleMobileMenu()" class="nav-link">Portfolio</a>
+                <a href="#industries" onclick="toggleMobileMenu()" class="nav-link">Industries</a>
+                <a href="#about" onclick="toggleMobileMenu()" class="nav-link">About</a>
+                <a href="#contact" onclick="toggleMobileMenu()" 
+                   class="mt-6 py-4 text-center bg-cyan-500 text-zinc-950 font-semibold rounded-3xl">
+                    Get a Quote
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 bg-zinc-900 border border-zinc-700 rounded-full px-4 py-2 text-sm">
+                    <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                    Now accepting new projects for Q3 2026
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl font-bold leading-tight tracking-tighter">
+                    Building <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">Next-Generation</span><br>
+                    Digital Experiences
+                </h1>
+                
+                <p class="text-xl text-zinc-400 max-w-lg">
+                    BIG6 crafts modern websites, AI-powered solutions, WordPress platforms, and scalable digital products that drive real business growth.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#portfolio" 
+                       class="px-8 py-4 bg-white text-zinc-950 font-semibold rounded-3xl flex items-center gap-3 hover:scale-105 transition-transform">
+                        View Portfolio
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" 
+                       class="px-8 py-4 border border-cyan-400 text-cyan-400 font-semibold rounded-3xl hover:bg-cyan-500 hover:text-zinc-950 transition-all">
+                        Start a Project
+                    </a>
+                </div>
+                
+                <div class="flex items-center gap-8 text-sm pt-6">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-400"></i>
+                        <span>100% Custom</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-400"></i>
+                        <span>AI-Ready</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-check text-emerald-400"></i>
+                        <span>Launch in weeks</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hero Visual -->
+            <div class="relative">
+                <div class="aspect-square bg-gradient-to-br from-cyan-500/10 to-violet-500/10 rounded-[4rem] p-8 border border-cyan-500/20">
+                    <div class="h-full bg-zinc-900 rounded-3xl shadow-2xl overflow-hidden border border-zinc-700 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-40 h-40 mx-auto mb-8 bg-gradient-to-br from-cyan-400 to-violet-500 rounded-2xl flex items-center justify-center">
+                                <span class="text-7xl">🚀</span>
+                            </div>
+                            <p class="text-cyan-300 font-medium">Modern • Fast • Scalable</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Floating badges -->
+                <div class="absolute -top-6 -right-6 bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-4 shadow-xl">
+                    <div class="flex items-center gap-3">
+                        <div class="text-emerald-400">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-zinc-400">Next.js + AI</p>
+                            <p class="font-semibold">Built for growth</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-xs tracking-widest">
+            <span class="text-zinc-500">SCROLL TO EXPLORE</span>
+            <i class="fa-solid fa-chevron-down animate-bounce"></i>
+        </div>
+    </section>
+
+    <!-- TRUSTED BY -->
+    <section class="py-12 border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-center text-zinc-500 text-sm mb-8 tracking-widest">TRUSTED BY FORWARD-THINKING TEAMS</p>
+            <div class="flex flex-wrap justify-center items-center gap-x-16 gap-y-10 opacity-75">
+                <div class="text-3xl font-bold logo-font">Sarlon</div>
+                <div class="text-3xl font-bold logo-font">RentalBridge</div>
+                <div class="text-3xl font-bold logo-font text-cyan-400">GSSL</div>
+                <div class="text-2xl font-medium">Futureproof</div>
+                <div class="text-2xl font-medium">Nexus Labs</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT BIG6 -->
+    <section id="about" class="py-24 bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="section-header text-5xl font-semibold tracking-tighter mb-8">We build digital foundations that last.</h2>
+                    <div class="prose prose-zinc prose-invert max-w-none text-lg">
+                        <p class="text-zinc-400">
+                            BIG6 is a boutique digital agency specializing in high-performance websites and custom software solutions. 
+                            We combine strategic thinking with cutting-edge development to help businesses stand out online.
+                        </p>
+                        <p class="text-zinc-400">
+                            Founded with a mission to eliminate mediocre digital experiences, we focus on clarity, speed, and measurable results.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-10 grid grid-cols-3 gap-8">
+                        <div>
+                            <div class="text-4xl font-semibold text-cyan-400">50+</div>
+                            <div class="text-sm text-zinc-400 mt-1">Projects Delivered</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-semibold text-cyan-400">98%</div>
+                            <div class="text-sm text-zinc-400 mt-1">Client Retention</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-semibold text-cyan-400">12</div>
+                            <div class="text-sm text-zinc-400 mt-1">Countries Reached</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-8">
+                    <div class="bg-zinc-800/50 border border-zinc-700 rounded-3xl p-8">
+                        <h4 class="font-semibold mb-3 flex items-center gap-3">
+                            <span class="text-cyan-400">→</span> Our Mission
+                        </h4>
+                        <p class="text-zinc-400">To empower businesses with digital tools that are beautiful, functional, and built to scale.</p>
+                    </div>
+                    <div class="bg-zinc-800/50 border border-zinc-700 rounded-3xl p-8">
+                        <h4 class="font-semibold mb-3 flex items-center gap-3">
+                            <span class="text-cyan-400">→</span> Our Vision
+                        </h4>
+                        <p class="text-zinc-400">A world where every business has a world-class digital presence that reflects their unique value.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="px-4 py-2 bg-cyan-950 text-cyan-400 text-sm rounded-full">WHAT WE DO</span>
+                <h2 class="text-5xl font-semibold tracking-tighter mt-6">Services that move your business forward</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-zinc-900 border border-zinc-800 rounded-3xl p-8 group">
+                    <div class="w-14 h-14 bg-cyan-500/10 text-cyan-400 flex items-center justify-center rounded-2xl text-3xl mb-8 group-hover:scale-110 transition-transform">🌐</div>
+                    <h3 class="text-2xl font-semibold mb-3">Website Development</h3>
+                    <p class="text-zinc-400">Custom, high-performance websites built with modern frameworks and pixel-perfect design.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-zinc-900 border border-zinc-800 rounded-3xl p-8 group">
+                    <div class="w-14 h-14 bg-violet-500/10 text-violet-400 flex items-center justify-center rounded-2xl text-3xl mb-8 group-hover:scale-110 transition-transform">🎨</div>
+                    <h3 class="text-2xl font-semibold mb-3">Web Design & UI/UX</h3>
+                    <p class="text-zinc-400">Strategic, conversion-focused designs that look stunning on every device.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-zinc-900 border border-zinc-800 rounded-3xl p-8 group">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-400 flex items-center justify-center rounded-2xl text-3xl mb-8 group-hover:scale-110 transition-transform">📝</div>
+                    <h3 class="text-2xl font-semibold mb-3">WordPress Development</h3>
+                    <p class="text-zinc-400">Fast, secure, and easy-to-manage WordPress sites with custom themes and plugins.</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-zinc-900 border border-zinc-800 rounded-3xl p-8 group">
+                    <div class="w-14 h-14 bg-emerald-500/10 text-emerald-400 flex items-center justify-center rounded-2xl text-3xl mb-8 group-hover:scale-110 transition-transform">🛒</div>
+                    <h3 class="text-2xl font-semibold mb-3">E-commerce Solutions</h3>
+                    <p class="text-zinc-400">Powerful online stores with seamless checkout and inventory management.</p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-zinc-900 border border-zinc-800 rounded-3xl p-8 group">
+                    <div class="w-14 h-14 bg-rose-500/10 text-rose-400 flex items-center justify-center rounded-2xl text-3xl mb-8 group-hover:scale-110 transition-transform">🤖</div>
+                    <h3 class="text-2xl font-semibold mb-3">AI Integration</h3>
+                    <p class="text-zinc-400">Embed intelligent features like chatbots, content generation, and data insights.</p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-zinc-900 border border-zinc-800 rounded-3xl p-8 group">
+                    <div class="w-14 h-14 bg-sky-500/10 text-sky-400 flex items-center justify-center rounded-2xl text-3xl mb-8 group-hover:scale-110 transition-transform">⚡</div>
+                    <h3 class="text-2xl font-semibold mb-3">Performance & SEO</h3>
+                    <p class="text-zinc-400">Lightning-fast sites optimized for search engines and Core Web Vitals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEVELOPMENT PROCESS -->
+    <section class="py-24 bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-semibold tracking-tighter">Our Proven Process</h2>
+                <p class="text-zinc-400 mt-4 max-w-md mx-auto">From idea to launch in 6 transparent steps</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-zinc-800 rounded-2xl flex items-center justify-center text-3xl mb-6">1</div>
+                    <h4 class="font-semibold mb-2">Discovery</h4>
+                    <p class="text-sm text-zinc-400">Understanding your goals, audience, and requirements</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-zinc-800 rounded-2xl flex items-center justify-center text-3xl mb-6">2</div>
+                    <h4 class="font-semibold mb-2">Planning</h4>
+                    <p class="text-sm text-zinc-400">Wireframes, sitemaps, and technical architecture</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-zinc-800 rounded-2xl flex items-center justify-center text-3xl mb-6">3</div>
+                    <h4 class="font-semibold mb-2">Design</h4>
+                    <p class="text-sm text-zinc-400">Beautiful, user-centered interfaces</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-zinc-800 rounded-2xl flex items-center justify-center text-3xl mb-6">4</div>
+                    <h4 class="font-semibold mb-2">Development</h4>
+                    <p class="text-sm text-zinc-400">Clean, secure, and scalable code</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-zinc-800 rounded-2xl flex items-center justify-center text-3xl mb-6">5</div>
+                    <h4 class="font-semibold mb-2">Testing</h4>
+                    <p class="text-sm text-zinc-400">Rigorous QA across devices and browsers</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-zinc-800 rounded-2xl flex items-center justify-center text-3xl mb-6">6</div>
+                    <h4 class="font-semibold mb-2">Launch & Support</h4>
+                    <p class="text-sm text-zinc-400">Go-live and ongoing maintenance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNOLOGY STACK -->
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-semibold tracking-tighter">Modern Tech Stack</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-y-12">
+                <div>
+                    <h4 class="uppercase text-xs tracking-widest text-cyan-400 mb-6">Frontend</h4>
+                    <ul class="space-y-4 text-lg">
+                        <li>HTML5 • Tailwind CSS</li>
+                        <li>JavaScript • TypeScript</li>
+                        <li>React • Next.js</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="uppercase text-xs tracking-widest text-cyan-400 mb-6">Backend & CMS</h4>
+                    <ul class="space-y-4 text-lg">
+                        <li>Node.js • Python</li>
+                        <li>WordPress</li>
+                        <li>PHP</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="uppercase text-xs tracking-widest text-cyan-400 mb-6">Databases</h4>
+                    <ul class="space-y-4 text-lg">
+                        <li>PostgreSQL</li>
+                        <li>MySQL</li>
+                        <li>Supabase / Firebase</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="uppercase text-xs tracking-widest text-cyan-400 mb-6">Tools & Others</h4>
+                    <ul class="space-y-4 text-lg">
+                        <li>Git • GitHub</li>
+                        <li>Figma • Webflow</li>
+                        <li>AI Tools & APIs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INDUSTRIES -->
+    <section id="industries" class="py-24 bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-semibold tracking-tighter">Industries We Serve</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-zinc-800 hover:bg-zinc-700 transition-colors p-8 rounded-3xl text-center">Healthcare</div>
+                <div class="bg-zinc-800 hover:bg-zinc-700 transition-colors p-8 rounded-3xl text-center">Real Estate</div>
+                <div class="bg-zinc-800 hover:bg-zinc-700 transition-colors p-8 rounded-3xl text-center">Education</div>
+                <div class="bg-zinc-800 hover:bg-zinc-700 transition-colors p-8 rounded-3xl text-center">Finance</div>
+                <div class="bg-zinc-800 hover:bg-zinc-700 transition-colors p-8 rounded-3xl text-center">Restaurants</div>
+                <div class="bg-zinc-800 hover:bg-zinc-700 transition-colors p-8 rounded-3xl text-center">Retail & E-commerce</div>
+                <div class="bg-zinc-800 hover:bg-zinc-700 transition-colors p-8 rounded-3xl text-center">Startups</div>
+                <div class="bg-zinc-800 hover:bg-zinc-700 transition-colors p-8 rounded-3xl text-center">Professional Services</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-5xl font-semibold tracking-tighter">Recent Work</h2>
+                </div>
+                <a href="#" class="text-cyan-400 flex items-center gap-2 group">
+                    View all projects 
+                    <span class="group-hover:translate-x-1 transition">→</span>
+                </a>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="group bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800">
+                    <div class="h-64 bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center text-6xl">🏠</div>
+                    <div class="p-8">
+                        <div class="text-cyan-400 text-sm mb-1">REAL ESTATE • SAAS</div>
+                        <h3 class="text-2xl font-semibold mb-2">RentalBridge</h3>
+                        <p class="text-zinc-400 line-clamp-3">Property management platform with tenant portals, automated payments, and analytics.</p>
+                        <div class="mt-6 flex flex-wrap gap-2">
+                            <span class="text-xs bg-zinc-800 px-3 py-1 rounded-full">Next.js</span>
+                            <span class="text-xs bg-zinc-800 px-3 py-1 rounded-full">Supabase</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="group bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800">
+                    <div class="h-64 bg-gradient-to-br from-amber-600 to-red-500 flex items-center justify-center text-6xl">🏢</div>
+                    <div class="p-8">
+                        <div class="text-cyan-400 text-sm mb-1">CORPORATE</div>
+                        <h3 class="text-2xl font-semibold mb-2">Sarlon Corporate Site</h3>
+                        <p class="text-zinc-400 line-clamp-3">High-end marketing website with 3D elements and integrated CMS.</p>
+                        <div class="mt-6 flex flex-wrap gap-2">
+                            <span class="text-xs bg-zinc-800 px-3 py-1 rounded-full">Webflow</span>
+                            <span class="text-xs bg-zinc-800 px-3 py-1 rounded-full">Framer Motion</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="group bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800">
+                    <div class="h-64 bg-gradient-to-br from-emerald-600 to-teal-500 flex items-center justify-center text-6xl">📊</div>
+                    <div class="p-8">
+                        <div class="text-cyan-400 text-sm mb-1">DEMO</div>
+                        <h3 class="text-2xl font-semibold mb-2">GSSL Analytics Demo</h3>
+                        <p class="text-zinc-400 line-clamp-3">Interactive dashboard showcasing data visualization capabilities.</p>
+                        <div class="mt-6 flex flex-wrap gap-2">
+                            <span class="text-xs bg-zinc-800 px-3 py-1 rounded-full">React</span>
+                            <span class="text-xs bg-zinc-800 px-3 py-1 rounded-full">Recharts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE BIG6 -->
+    <section class="py-24 bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <div class="md:col-span-5">
+                    <h2 class="text-5xl font-semibold tracking-tighter leading-tight">Why businesses choose BIG6</h2>
+                </div>
+                <div class="md:col-span-7 grid md:grid-cols-2 gap-8">
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="text-4xl">⚡</div>
+                            <div>
+                                <h4 class="font-semibold text-xl">Blazing Fast Performance</h4>
+                                <p class="text-zinc-400">100/100 Lighthouse scores guaranteed</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="text-4xl">📱</div>
+                            <div>
+                                <h4 class="font-semibold text-xl">Mobile-First Design</h4>
+                                <p class="text-zinc-400">Seamless experiences on all devices</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="text-4xl">🔒</div>
+                            <div>
+                                <h4 class="font-semibold text-xl">Secure by Default</h4>
+                                <p class="text-zinc-400">Best practices from day one</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="text-4xl">📈</div>
+                            <div>
+                                <h4 class="font-semibold text-xl">Built for Growth</h4>
+                                <p class="text-zinc-400">Scalable architecture that grows with you</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-24">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="italic text-2xl leading-relaxed">
+                "BIG6 transformed our online presence completely. The new site loads instantly and our conversion rate increased by over 40% in the first month."
+            </div>
+            <div class="mt-10">
+                <p class="font-semibold">— Sarah Chen, Founder of RentalBridge</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="py-20 bg-zinc-900 border-t border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+            <div>
+                <div id="stat1" class="stat-number text-6xl font-semibold text-cyan-400">42</div>
+                <div class="text-zinc-400 mt-3">Projects Completed</div>
+            </div>
+            <div>
+                <div id="stat2" class="stat-number text-6xl font-semibold text-cyan-400">18</div>
+                <div class="text-zinc-400 mt-3">Happy Clients</div>
+            </div>
+            <div>
+                <div id="stat3" class="stat-number text-6xl font-semibold text-cyan-400">9</div>
+                <div class="text-zinc-400 mt-3">Industries Served</div>
+            </div>
+            <div>
+                <div id="stat4" class="stat-number text-6xl font-semibold text-cyan-400">4.9</div>
+                <div class="text-zinc-400 mt-3">Average Rating</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 max-w-3xl mx-auto px-6">
+        <h2 class="text-5xl font-semibold tracking-tighter text-center mb-16">Frequently Asked Questions</h2>
+        
+        <div class="space-y-6">
+            <div onclick="toggleFAQ(this)" class="faq-item bg-zinc-900 rounded-3xl p-8 cursor-pointer border border-zinc-800">
+                <div class="flex justify-between items-center">
+                    <h4 class="font-medium">How long does a typical website take?</h4>
+                    <i class="fa-solid fa-plus faq-icon transition-transform"></i>
+                </div>
+                <div class="faq-answer hidden mt-6 text-zinc-400">
+                    Most projects take 4-8 weeks depending on complexity. We provide clear timelines during discovery.
+                </div>
+            </div>
+            
+            <div onclick="toggleFAQ(this)" class="faq-item bg-zinc-900 rounded-3xl p-8 cursor-pointer border border-zinc-800">
+                <div class="flex justify-between items-center">
+                    <h4 class="font-medium">Do you build and customize WordPress sites?</h4>
+                    <i class="fa-solid fa-plus faq-icon transition-transform"></i>
+                </div>
+                <div class="faq-answer hidden mt-6 text-zinc-400">
+                    Yes. We specialize in custom WordPress themes, plugin development, and performance optimization.
+                </div>
+            </div>
+            
+            <div onclick="toggleFAQ(this)" class="faq-item bg-zinc-900 rounded-3xl p-8 cursor-pointer border border-zinc-800">
+                <div class="flex justify-between items-center">
+                    <h4 class="font-medium">Can you redesign my existing website?</h4>
+                    <i class="fa-solid fa-plus faq-icon transition-transform"></i>
+                </div>
+                <div class="faq-answer hidden mt-6 text-zinc-400">
+                    Absolutely. We offer complete redesigns with improved UX, speed, and SEO.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="py-32 bg-gradient-to-br from-cyan-950 to-zinc-950 text-center">
+        <div class="max-w-2xl mx-auto px-6">
+            <h2 class="text-6xl font-bold tracking-tighter">Ready to elevate your digital presence?</h2>
+            <p class="text-xl text-zinc-400 mt-6">Let's build something exceptional together.</p>
+            
+            <div class="mt-12 flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="#contact" 
+                   class="inline-flex items-center justify-center px-10 py-6 bg-white text-zinc-950 font-semibold text-lg rounded-3xl hover:scale-105 transition">
+                    Start Your Project
+                </a>
+                <a href="mailto:hello@big6.dev" 
+                   class="inline-flex items-center justify-center px-10 py-6 border border-white/60 font-semibold text-lg rounded-3xl hover:bg-white/10 transition">
+                    Email Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20">
+            <div>
+                <h2 class="text-5xl font-semibold tracking-tighter mb-8">Let's build the future together</h2>
+                <p class="text-zinc-400 text-lg">Whether you have a big vision or just need a quick landing page, we're here to help.</p>
+                
+                <div class="mt-12 space-y-8">
+                    <div class="flex gap-6">
+                        <i class="fa-solid fa-envelope text-3xl text-cyan-400 mt-1"></i>
+                        <div>
+                            <p class="text-sm text-zinc-500">EMAIL</p>
+                            <a href="mailto:hello@big6.dev" class="text-xl hover:text-cyan-400">hello@big6.dev</a>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <i class="fa-solid fa-globe text-3xl text-cyan-400 mt-1"></i>
+                        <div>
+                            <p class="text-sm text-zinc-500">WEBSITE</p>
+                            <a href="#" class="text-xl hover:text-cyan-400">big6.dev</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <form class="space-y-8" onsubmit="handleSubmit(event)">
+                <div class="grid grid-cols-2 gap-6">
+                    <input type="text" placeholder="First Name" required
+                           class="bg-zinc-900 border border-zinc-700 focus:border-cyan-400 rounded-2xl px-6 py-5 outline-none">
+                    <input type="text" placeholder="Last Name" required
+                           class="bg-zinc-900 border border-zinc-700 focus:border-cyan-400 rounded-2xl px-6 py-5 outline-none">
+                </div>
+                <input type="email" placeholder="Business Email" required
+                       class="w-full bg-zinc-900 border border-zinc-700 focus:border-cyan-400 rounded-2xl px-6 py-5 outline-none">
+                <textarea placeholder="Tell us about your project..." rows="6" required
+                          class="w-full bg-zinc-900 border border-zinc-700 focus:border-cyan-400 rounded-2xl px-6 py-5 outline-none resize-none"></textarea>
+                
+                <button type="submit"
+                        class="w-full py-6 bg-cyan-500 hover:bg-cyan-400 transition text-zinc-950 font-semibold text-lg rounded-3xl">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-zinc-900 py-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-5 gap-y-12">
+            <div class="md:col-span-2">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-9 h-9 bg-cyan-500 rounded-2xl flex items-center justify-center text-zinc-950 font-bold text-3xl logo-font">6</div>
+                    <span class="text-4xl font-bold tracking-tighter logo-font">BIG6</span>
+                </div>
+                <p class="text-zinc-500 max-w-xs">Crafting exceptional digital experiences since 2024.</p>
+                
+                <div class="flex gap-6 mt-12 text-2xl">
+                    <a href="#" class="hover:text-cyan-400 transition"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="hover:text-cyan-400 transition"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="hover:text-cyan-400 transition"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h5 class="font-semibold mb-6">Company</h5>
+                <ul class="space-y-4 text-sm text-zinc-400">
+                    <li><a href="#about" class="hover:text-white">About</a></li>
+                    <li><a href="#" class="hover:text-white">Process</a></li>
+                    <li><a href="#" class="hover:text-white">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h5 class="font-semibold mb-6">Services</h5>
+                <ul class="space-y-4 text-sm text-zinc-400">
+                    <li>Web Development</li>
+                    <li>WordPress</li>
+                    <li>E-commerce</li>
+                    <li>AI Solutions</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h5 class="font-semibold mb-6">Legal</h5>
+                <ul class="space-y-4 text-sm text-zinc-400">
+                    <li>Privacy Policy</li>
+                    <li>Terms of Service</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 mt-20 pt-8 border-t border-zinc-900 text-xs text-zinc-500 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>© 2026 BIG6 Digital Agency. All rights reserved.</div>
+            <div>Made with precision in the cloud.</div>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script already included
+        
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        
+        // FAQ toggle
+        function toggleFAQ(el) {
+            const answer = el.querySelector('.faq-answer');
+            const icon = el.querySelector('.faq-icon');
+            answer.classList.toggle('hidden');
+            icon.style.transform = answer.classList.contains('hidden') ? '' : 'rotate(45deg)';
+        }
+        
+        // Fake form submit
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert("Thank you! Your message has been received. We'll get back to you shortly.");
+            e.target.reset();
+        }
+        
+        // Counter animation
+        function animateCounter(id, target, duration = 2000) {
+            const element = document.getElementById(id);
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            function update() {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target;
+                } else {
+                    element.textContent = Math.floor(start);
+                    requestAnimationFrame(update);
+                }
+            }
+            update();
+        }
+        
+        // Initialize counters when scrolled into view
+        function initCounters() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter('stat1', 42);
+                        animateCounter('stat2', 18);
+                        animateCounter('stat3', 9);
+                        animateCounter('stat4', 49, 1500); // 4.9 as 49 for demo
+                        observer.disconnect();
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            const statsSection = document.querySelector('.bg-zinc-900.border-t');
+            if (statsSection) observer.observe(statsSection);
+        }
+        
+        // Keyboard escape for mobile menu
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") {
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.scrollY - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Initialize everything
+        window.onload = function() {
+            initCounters();
+            
+            // Add subtle scroll effect to header
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.style.backgroundColor = 'rgba(9, 9, 11, 0.95)';
+                } else {
+                    header.style.backgroundColor = 'rgba(9, 9, 11, 0.8)';
+                }
+            });
+            
+            console.log('%cBIG6 Website loaded successfully 🚀', 'color:#67e8f9; font-family:monospace');
+        };
+    </script>
+</body>
+  </html>
